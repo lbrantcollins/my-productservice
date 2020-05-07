@@ -1,0 +1,11 @@
+pairs:
+  gs: Geno Sandefur; gsan8
+  jz: Jason Zhao; jzhav
+  rm: Robert Malito; rmami
+  ro: Raul Orduno; rordu
+  bc: Brant Collins; lcomy
+email:
+  prefix: pair
+  domain: allstate.com
+  no_solo_prefix: true
+global: true  # Set to true for git-pair to change git configuration for all your projects
