@@ -1,9 +1,12 @@
 package com.allstate.tddspringjunit5.myproductservice.controller;
 
 import com.allstate.tddspringjunit5.myproductservice.model.Product;
-import com.allstate.tddspringjunit5.myproductservice.repository.ProductRepository;
+import com.allstate.tddspringjunit5.myproductservice.service.ProductService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
@@ -12,13 +15,11 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ProductController {
 
-    private final ProductRepository repository;
+    private final ProductService service;
 
     @GetMapping(value = "/product/{id}")
     public Optional<Product> findById(@PathVariable Integer id) {
-        // TODO: Need to set up a service with a findById method to handle the possibility that the ID is not found (rather than using an Optional here)
-        // TODO: Getting a null pointer exception here...
-        return repository.findById(id);
+        return service.findById(id);
     }
 
 }
